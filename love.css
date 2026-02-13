@@ -1,0 +1,71 @@
+   body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+             background: linear-gradient(140deg
+           ,#F0EBE3,#FFDCDC,#FFDCDC,#FAA4BD,#FAA4BD,#FAA4BD,#FFDCDC,#FFDCDC,#F0EBE3);         
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #e60073;
+        }
+       
+        .heart {
+            font-size: 110px;
+            animation: anim 1.2s infinite;}         
+
+        @keyframes anim {
+             0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+animation: hardGlow 1.3s infinite ease-in-out;
+        }
+          .message {
+           }
+  
+ .message {
+            font-size: 72px;                                    
+            margin-top: 32px;     
+              font-weight: bold;
+  color: #e60073;
+  text-align: center;
+  animation: softGlow 1.3s infinite ease-in-out;
+}
+
+/* Hard glow animation */
+@keyframes softGlow {
+  0% {
+    text-shadow: none;
+  }
+
+  50% {
+    text-shadow:
+      0 0 4px #FFF7F3,
+      0 0 8px #FFF7F3,
+      0 0 16px #FFF7F3;
+      0 0 24px #FFF7F3;
+      0 0 32px #FFF7F3;
+      0 0 64px #FFF7F3;
+  }
+
+  100% {
+    text-shadow: none;
+  }
+}
+#button{
+    padding: 10px 20px;
+   
+    margin-left: 90%;
+    border: none;
+    border-radius: 20px;
+    background-color:#ff2a74;
+    color: white;
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s
+}

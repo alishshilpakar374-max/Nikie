@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Niki</title>
+<link rel="stylesheet" href="Niki.css">
+</head>
+<body>
+<div class="card">
+    <h1>Happy Valentine 💘</h1>
+    <p>You make my days brighter and my heart happier </p>
+    <button id="yesBtn">Click Me</button>
+    <div id="message" class="hidden">
+        <br>
+     <!--  Will you be my Valentine?  -->
+    </div>
+</div>
+<script> 
+    const yesBtn = document.getElementById("yesBtn");
+
+yesBtn.addEventListener("click", () => {
+   window.location.href = "sticker.html";
+});
+
+ const createHeart = () => {
+    const heart = document.createElement('div');
+    heart.textContent = '❤️';
+    heart.style.position = 'fixed';
+    heart.style.fontSize = `${Math.random() * 20 + 10}px`;    
+    heart.style.left = `${Math.random() * window.innerWidth}px`;
+    heart.style.bottom = '0px';
+    heart.style.pointerEvents = 'none';
+    heart.style.opacity = 1;
+    heart.style.transition = 'transform 4s linear, opacity 4s linear';
+    document.body.appendChild(heart);
+
+    // Force reflow to apply transition
+    requestAnimationFrame(() => {
+        heart.style.transform = `translateY(-${window.innerHeight + 50}px)`;
+        heart.style.opacity = 0;
+    });
+
+    // Remove heart after animation
+    setTimeout(() => heart.remove(), 4000);
+};
+
+// Create a new heart every 300ms
+setInterval(createHeart, 600);
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <link rel="stylesheet" href="kiss.css">
+</head>
+<body>
+    <img src="kiss.gif" ></img>
+    <h1>Happy Kiss Day Nikiee</h1>
+    <p>I wish you a happy kiss day 😘.On the ocassion of kiss day I want to tall you that I love you and let's chat again . </p>
+    <button id="button">Next</button>
+    <script>
+        const createHeart = () => {
+    const heart = document.createElement('div');
+    heart.textContent = '❤️';
+    heart.style.position = 'fixed';
+    heart.style.fontSize = `${Math.random() * 20 + 10}px`;    
+    heart.style.left = `${Math.random() * window.innerWidth}px`;
+    heart.style.bottom = '0px';
+    heart.style.pointerEvents = 'none';
+    heart.style.opacity = 1;
+    heart.style.transition = 'transform 4s linear, opacity 4s linear';
+    document.body.appendChild(heart);
+
+    // Force reflow to apply transition
+    requestAnimationFrame(() => {
+        heart.style.transform = `translateY(-${window.innerHeight + 50}px)`;
+        heart.style.opacity = 0;
+    });
+
+    // Remove heart after animation
+    setTimeout(() => heart.remove(), 4000);
+};
+
+// Create a new heart every 300ms
+setInterval(createHeart, 300);
+//`${Math.random() * 20 + 10}p
+
+const button = document.getElementById('button');
+
+button.addEventListener('click', () => {
+   window.location.href="love.html";
+});
+    </script>
+</body>
+</html>

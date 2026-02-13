@@ -1,0 +1,50 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+</head>
+<body>
+    
+</body>
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💘</title>
+    <link rel="stylesheet" href="A.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hey Nikitaa ! 💖</h1>
+        <p>Will you be my Valentine Nikita?</p>
+        <div id="message " class="buttons">
+            <button id="yesBtn" >Yes 💕</button>
+            <button id="noBtn">No</button>
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById('yesBtn');
+const noBtn = document.getElementById('noBtn');
+const message = document.getElementById('message');
+
+// Move "No" button randomly when hovered
+noBtn.addEventListener('mouseover', () => {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.position = 'absolute';
+    noBtn.style.left = x + 'px';
+    noBtn.style.top = y + 'px';
+});
+
+// Show love message if "Yes" clicked
+yesBtn.addEventListener('click', () => {
+   window.location.href="Niki.html";
+});
+
+    </script>
+</body>
+</html>A

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+       <link rel="stylesheet" href="love.css">
+    <title>Love </title>
+   
+</head>
+<body>   
+    <div class="heart">❤️</div>
+    <div class="message">I love you</div>
+    <button id="button">Next</button>
+    <script>
+        const createHeart = () => {
+    const heart = document.createElement('div');
+    heart.textContent = '🩷';
+    heart.style.position = 'fixed';
+    heart.style.fontSize = `${Math.random() * 20 + 10}px`;    
+    heart.style.left = `${Math.random() * window.innerWidth}px`;
+    heart.style.bottom = '0px';
+    heart.style.pointerEvents = 'none';
+    heart.style.opacity = 1;
+    heart.style.transition = 'transform 4s linear, opacity 4s linear';
+    document.body.appendChild(heart);
+
+    // Force reflow to apply transition
+    requestAnimationFrame(() => {
+        heart.style.transform = `translateY(-${window.innerHeight + 50}px)`;
+        heart.style.opacity = 0;
+    });
+
+    // Remove heart after animation
+    setTimeout(() => heart.remove(), 4000);
+};
+
+setInterval(createHeart, 300);
+
+const button = document.getElementById('button');
+
+button.addEventListener('click', () => {
+   window.location.href="flower.html";
+});
+    </script>
+</body>
+</html>
